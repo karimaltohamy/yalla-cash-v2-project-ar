@@ -1,0 +1,164 @@
+@use "../components/header";
+@use "../components/footer";
+@use "../pages/index";
+@use "../pages/about-us";
+@use "../pages/services";
+@use "../pages/product-details";
+@use "../pages/portfolio";
+@use "../pages/project-details";
+@use "../pages/blog-details";
+@use "../pages/contact-us";
+
+@import "../components/variables";
+
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --border-color: rgb(228, 228, 228);
+  --bg-section: #f7fafd;
+  --bg-main: white;
+  --text-color: black;
+  --box-shadow: 0 4px 6px 0 rgba(226, 232, 240, 0.5);
+  --bg-box: #e6f9eb;
+  --bg-box2: white;
+  --bg-hero: url(../images/banner-bg.jpg);
+  --bg-section-gradient: url(../images/aboutrepay.jpg);
+  --bg-section2: linear-gradient(120deg, #ffffff 40%, #238a5e 30%, #238a5e);
+  --bg-section3: linear-gradient(180deg, #e5ecf0 18%, #00000000 59%);
+}
+
+html {
+  overflow-x: hidden !important;
+}
+
+body {
+  scroll-behavior: smooth;
+  font-family: "Cairo", sans-serif !important;
+  overflow-x: hidden !important;
+  background-color: var(--bg-main) !important;
+  color: var(--text-color) !important;
+  direction: rtl !important;
+
+  &.dark {
+    --bg-main: #061712;
+    --text-color: white;
+    --bg-section: #09241c;
+    --box-shadow: 0 4px 6px 0 rgb(0 0 0 / 35%);
+    --bg-box: #16392b;
+    --bg-box2: #16392b;
+    --bg-hero: radial-gradient(at bottom center, #1c7d49 0%, #061712 50%);
+    --bg-section-gradient: radial-gradient(
+      at bottom center,
+      #1c7d49 0%,
+      #09241c 50%
+    );
+    --bg-section2: linear-gradient(120deg, #09241c 40%, #238a5e 30%, #238a5e);
+    --bg-section3: linear-gradient(180deg, #15301f 18%, rgba(0, 0, 0, 0) 59%);
+    --border-color: #2e3c36;
+  }
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+svg {
+  width: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(218, 218, 218);
+  border-radius: 15px;
+}
+
+.btn_fill {
+  padding: 5px 20px;
+  color: white !important;
+  background-color: $primary-color;
+  color: white;
+  border-radius: 50px;
+  border: none;
+}
+
+.btn_outline {
+  padding: 4px 20px;
+  color: $primary-color !important;
+  background-color: transparent;
+  border: 1px solid $primary-color !important;
+  color: white;
+  border-radius: 50px;
+  border: none;
+  transition: all 0.4s;
+
+  &:hover {
+    background-color: $primary-color;
+    color: white !important;
+  }
+}
+
+main {
+  position: relative;
+  background: var(--bg-hero);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.line_section {
+  display: flex;
+  gap: 40px;
+
+  > div {
+    width: 50%;
+  }
+}
+
+.section {
+  padding: 70px 0;
+}
+
+@media (max-width: 768px) {
+  .btn_fill,
+  .btn_outline {
+    padding: 4px 15px;
+    font-size: 13px;
+  }
+
+  .section {
+    padding: 35px 0;
+  }
+
+  .line_section {
+    flex-direction: column;
+    gap: 30px;
+
+    > div {
+      width: 100%;
+    }
+  }
+}
